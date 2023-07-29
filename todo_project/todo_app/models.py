@@ -19,10 +19,6 @@ class Todos(models.Model):           #representing table in the database that co
 
 
 class MainUser(models.Model):        #representing table in the database that contains all users
-    GENDER_CHOICES = (
-        ('M', 'Male'),
-        ('F', 'Female')
-    )
     email       = models.EmailField(max_length=254, unique=True)
     username  = models.CharField(max_length=64)
     password    = models.CharField(max_length=254)
@@ -30,8 +26,6 @@ class MainUser(models.Model):        #representing table in the database that co
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    #REQUIRED_FIELDS = ['email']
-    #USERNAME_FIELD = 'email'
 
     def set_password(self, raw_password):
         self.password = make_password(raw_password)
