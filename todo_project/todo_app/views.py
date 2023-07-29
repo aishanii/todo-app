@@ -86,7 +86,7 @@ class TodoView(View):      #to handle retrieval, creation, updation and deletion
         return send_200({"res_str":"success",
                         "data":todo_list})
     
-    def create_obj(self, data):
+    def create_obj(self, data):   #creating a new To-Do item
         title = data.get("title")
         description= data.get("description")
         
